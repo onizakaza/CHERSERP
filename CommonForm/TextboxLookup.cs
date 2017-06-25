@@ -21,7 +21,21 @@ namespace CommonForm
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-            this.btnSearchClicked(sender, e);
+            if (this.btnSearchClicked != null)
+            {
+                this.btnSearchClicked(sender, e);
+            }
         }
-}
+
+        public string lblText
+        {
+            get { return label1.Text; }
+            set { label1.Text = value; }
+        }
+        public Color lblColor
+        {
+            get { return label1.ForeColor; }
+            set { label1.ForeColor = value; }
+        }
+    }
 }
