@@ -37,6 +37,7 @@ namespace CHERSERP
             treeView1.Nodes.Add("Added Node");
             treeView1.Nodes[0].Nodes.Add("Haaaaa");
             treeView1.Nodes[0].Nodes[0].Nodes.Add("Wow");
+            treeView1.Nodes.Add("Home");
 
             treeView1.EndUpdate();
         }
