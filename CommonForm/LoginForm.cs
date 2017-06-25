@@ -63,7 +63,7 @@ namespace CommonForm
 
         private bool Login(string loginName,string password)
         {
-            DataTable dt = db.QueryDataTable("SELECT * FROM SY_USER WHERE LoginName = '" + txtLoginName.Text.Trim() + "'");
+            DataTable dt = db.QueryDataTable("SELECT * FROM MS_Employees WHERE LoginName = '" + txtLoginName.Text.Trim() + "'");
 
             if(dt.Rows.Count == 0)
             {

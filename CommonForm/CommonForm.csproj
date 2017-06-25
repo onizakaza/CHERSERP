@@ -55,6 +55,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="TextboxLookup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TextboxLookup.Designer.cs">
+      <DependentUpon>TextboxLookup.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="LoginForm.resx">
@@ -63,6 +69,9 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextboxLookup.resx">
+      <DependentUpon>TextboxLookup.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -77,6 +86,9 @@
       <Project>{aabcaa00-578b-40ca-866f-fdaeab237a37}</Project>
       <Name>CommonVariable</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

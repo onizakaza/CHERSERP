@@ -34,10 +34,10 @@ namespace CHERSERP
         {
             
             treeView1.BeginUpdate();
-            treeView1.Nodes.Add("Added Node");
-            treeView1.Nodes[0].Nodes.Add("Haaaaa");
-            treeView1.Nodes[0].Nodes[0].Nodes.Add("Wow");
             treeView1.Nodes.Add("Home");
+            treeView1.Nodes.Add("Production and Planing");
+            treeView1.Nodes.Add("System and Configuration");
+            
 
             treeView1.EndUpdate();
         }
@@ -99,7 +99,7 @@ namespace CHERSERP
                 default:
                     SeedPlantation frm = new SeedPlantation();
                     frm.Show();
-                    MessageBox.Show(listView1.SelectedItems[0].Text);
+                    //MessageBox.Show(listView1.SelectedItems[0].Text);
                     break;
             }
 

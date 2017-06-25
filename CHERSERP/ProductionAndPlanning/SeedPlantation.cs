@@ -15,6 +15,12 @@ namespace MainPage.ProductionAndPlanning
         public SeedPlantation()
         {
             InitializeComponent();
+            
+        }
+
+        private void textboxLookup1_btnSearchClicked(object sender, EventArgs e)
+        {
+            MessageBox.Show("Yesahhh");
         }
     }
 }
