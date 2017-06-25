@@ -61,6 +61,12 @@
     <Compile Include="TextboxLookup.Designer.cs">
       <DependentUpon>TextboxLookup.cs</DependentUpon>
     </Compile>
+    <Compile Include="TopMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TopMenu.Designer.cs">
+      <DependentUpon>TopMenu.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="LoginForm.resx">
@@ -72,6 +78,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TextboxLookup.resx">
       <DependentUpon>TextboxLookup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TopMenu.resx">
+      <DependentUpon>TopMenu.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -87,7 +96,9 @@
       <Name>CommonVariable</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\menuNew.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
