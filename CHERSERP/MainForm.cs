@@ -42,6 +42,8 @@ namespace CHERSERP
             treeView1.EndUpdate();
         }
 
+
+
         private void TreeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
             this.Text = treeView1.SelectedNode.Text.Trim().ToUpper();

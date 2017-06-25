@@ -25,7 +25,7 @@ namespace CommonForm
             comboBox1.SelectedIndex = 0;
             comboBox1.DrawItem += ComboBox1_DrawItem;  
             DataTable dt = new DataTable();
-            dt = db.QueryDataTable("select top 1 loginname from sy_user");
+            dt = db.QueryDataTable("select top 1 loginname from MS_Employees");
             txtLoginName.Text = dt.Rows[0][0].ToString();
         }
 
