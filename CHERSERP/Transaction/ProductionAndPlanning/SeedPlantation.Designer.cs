@@ -34,11 +34,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.topMenu2 = new CommonForm.TopMenu();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.textboxLookup3 = new CommonForm.TextboxLookup();
             this.textboxLookup2 = new CommonForm.TextboxLookup();
             this.textboxLookup1 = new CommonForm.TextboxLookup();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.topMenu1 = new CommonForm.TopMenu();
             this.SuspendLayout();
             // 
             // label1
@@ -89,14 +89,13 @@
             this.textBox2.Size = new System.Drawing.Size(163, 26);
             this.textBox2.TabIndex = 7;
             // 
-            // topMenu2
+            // statusStrip1
             // 
-            this.topMenu2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.topMenu2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.topMenu2.Location = new System.Drawing.Point(0, 0);
-            this.topMenu2.Name = "topMenu2";
-            this.topMenu2.Size = new System.Drawing.Size(980, 40);
-            this.topMenu2.TabIndex = 10;
+            this.statusStrip1.Location = new System.Drawing.Point(0, 582);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(980, 22);
+            this.statusStrip1.TabIndex = 11;
+            this.statusStrip1.Text = "statusStrip1";
             // 
             // textboxLookup3
             // 
@@ -128,13 +127,16 @@
             this.textboxLookup1.Size = new System.Drawing.Size(493, 26);
             this.textboxLookup1.TabIndex = 2;
             // 
-            // statusStrip1
+            // topMenu1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 582);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(980, 22);
-            this.statusStrip1.TabIndex = 11;
-            this.statusStrip1.Text = "statusStrip1";
+            this.topMenu1.AutoSize = true;
+            this.topMenu1.BackColor = System.Drawing.SystemColors.Control;
+            this.topMenu1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.topMenu1.Location = new System.Drawing.Point(0, 0);
+            this.topMenu1.Name = "topMenu1";
+            this.topMenu1.Size = new System.Drawing.Size(980, 27);
+            this.topMenu1.TabIndex = 12;
+            this.topMenu1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.topMenu1_ItemClicked);
             // 
             // SeedPlantation
             // 
@@ -145,8 +147,8 @@
             this.BackgroundImage = global::CHERSERP.Properties.Resources.BG;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(980, 604);
+            this.Controls.Add(this.topMenu1);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.topMenu2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textboxLookup3);
@@ -156,6 +158,7 @@
             this.Controls.Add(this.textboxLookup1);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SeedPlantation";
             this.Text = "SeedPlantation";
@@ -173,7 +176,7 @@
         private CommonForm.TextboxLookup textboxLookup3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox2;
-        private CommonForm.TopMenu topMenu2;
         private System.Windows.Forms.StatusStrip statusStrip1;
+        private CommonForm.TopMenu topMenu1;
     }
 }

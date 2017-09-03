@@ -23,10 +23,7 @@ namespace CommonForm
             InitializeComponent();
             
             comboBox1.SelectedIndex = 0;
-            comboBox1.DrawItem += ComboBox1_DrawItem;  
-            DataTable dt = new DataTable();
-            dt = db.QueryDataTable("select top 1 loginname from MS_Employees");
-            txtLoginName.Text = dt.Rows[0][0].ToString();
+            comboBox1.DrawItem += ComboBox1_DrawItem;
         }
 
         private void ComboBox1_DrawItem(object sender, DrawItemEventArgs e)
@@ -63,7 +60,7 @@ namespace CommonForm
 
         private bool Login(string loginName,string password)
         {
-            DataTable dt = db.QueryDataTable("SELECT * FROM MS_Employees WHERE LoginName = '" + txtLoginName.Text.Trim() + "'");
+            DataTable dt = db.QueryDataTable("SELECT * FROM VW_SY_UserEmployee WHERE LoginName = '" + txtLoginName.Text.Trim() + "'");
 
             if(dt.Rows.Count == 0)
             {
@@ -74,6 +71,7 @@ namespace CommonForm
             {
                 if(txtPassword.Text.Trim() == dt.Rows[0]["Password"].ToString().Trim())
                 {
+                    GlobalUser.LoginName = dt.Rows[0]["LoginName"].ToString().Trim();
                     GlobalUser.FirstName = dt.Rows[0]["FirstName"].ToString().Trim();
                     GlobalUser.LastName = dt.Rows[0]["LastName"].ToString().Trim();
                     return true;

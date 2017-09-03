@@ -51,8 +51,11 @@
     <Reference Include="CommonForm">
       <HintPath>..\CommonForm\bin\Debug\CommonForm.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -71,29 +74,45 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Master\MS_Customers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\MS_Customers.Designer.cs">
+      <DependentUpon>MS_Customers.cs</DependentUpon>
+    </Compile>
     <Compile Include="MDIForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MDIForm.Designer.cs">
       <DependentUpon>MDIForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductionAndPlanning\SeedPlantation.cs">
+    <Compile Include="Transaction\ProductionAndPlanning\SeedPlantation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductionAndPlanning\SeedPlantation.Designer.cs">
+    <Compile Include="Transaction\ProductionAndPlanning\SeedPlantation.Designer.cs">
       <DependentUpon>SeedPlantation.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Transaction\SalesAndMarketing\TR_Orders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\SalesAndMarketing\TR_Orders.Designer.cs">
+      <DependentUpon>TR_Orders.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\MS_Customers.resx">
+      <DependentUpon>MS_Customers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MDIForm.resx">
       <DependentUpon>MDIForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductionAndPlanning\SeedPlantation.resx">
+    <EmbeddedResource Include="Transaction\ProductionAndPlanning\SeedPlantation.resx">
       <DependentUpon>SeedPlantation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -104,6 +123,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Transaction\SalesAndMarketing\TR_Orders.resx">
+      <DependentUpon>TR_Orders.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -156,6 +178,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\001-interface.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Report\" />
+    <Folder Include="System\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
