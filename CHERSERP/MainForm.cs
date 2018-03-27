@@ -143,9 +143,17 @@ namespace CHERSERP
                     }
                     break;
                 default:
-                    var form = (Form)Activator.CreateInstance(Type.GetType("Master.MS_Customers"));
-                    form.Show();
-                    break;
+                    try
+                    {
+                        var form = (Form)Activator.CreateInstance(Type.GetType(listView1.SelectedItems[0].Tag.ToString().Trim()));
+                        form.Show();
+                        break;
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show("Error Loading Page "+ listView1.SelectedItems[0].Tag.ToString().Trim() +"\n" +ex.Message,this.Text,MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        break;
+                    }
             }
 
 

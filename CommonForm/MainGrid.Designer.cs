@@ -42,14 +42,14 @@
             this.lblQuickSearch = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.txtCurrentPage = new System.Windows.Forms.TextBox();
+            this.btnFirstPage = new System.Windows.Forms.Button();
+            this.btnLastPage = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.btnPreviousPage = new System.Windows.Forms.Button();
+            this.btnNextPage = new System.Windows.Forms.Button();
+            this.lblPageCount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -93,9 +93,10 @@
             this.dataGridView1.RowTemplate.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.Size = new System.Drawing.Size(992, 179);
+            this.dataGridView1.Size = new System.Drawing.Size(992, 129);
             this.dataGridView1.StandardTab = true;
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             // 
             // panel1
             // 
@@ -194,46 +195,48 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.textBox2);
-            this.panel3.Controls.Add(this.button4);
-            this.panel3.Controls.Add(this.button6);
+            this.panel3.Controls.Add(this.txtCurrentPage);
+            this.panel3.Controls.Add(this.btnFirstPage);
+            this.panel3.Controls.Add(this.btnLastPage);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.button5);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Controls.Add(this.btnPreviousPage);
+            this.panel3.Controls.Add(this.btnNextPage);
+            this.panel3.Controls.Add(this.lblPageCount);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(992, 50);
             this.panel3.TabIndex = 3;
             // 
-            // textBox2
+            // txtCurrentPage
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBox2.Location = new System.Drawing.Point(84, 11);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(45, 26);
-            this.textBox2.TabIndex = 2;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCurrentPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtCurrentPage.Location = new System.Drawing.Point(84, 11);
+            this.txtCurrentPage.Name = "txtCurrentPage";
+            this.txtCurrentPage.Size = new System.Drawing.Size(45, 26);
+            this.txtCurrentPage.TabIndex = 2;
+            this.txtCurrentPage.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // button4
+            // btnFirstPage
             // 
-            this.button4.Location = new System.Drawing.Point(12, 10);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(30, 30);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "<<";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnFirstPage.Location = new System.Drawing.Point(12, 10);
+            this.btnFirstPage.Name = "btnFirstPage";
+            this.btnFirstPage.Size = new System.Drawing.Size(30, 30);
+            this.btnFirstPage.TabIndex = 1;
+            this.btnFirstPage.Text = "<<";
+            this.btnFirstPage.UseVisualStyleBackColor = true;
+            this.btnFirstPage.Click += new System.EventHandler(this.btnFirstPage_Click);
             // 
-            // button6
+            // btnLastPage
             // 
-            this.button6.Location = new System.Drawing.Point(242, 10);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(30, 30);
-            this.button6.TabIndex = 7;
-            this.button6.Text = ">>";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnLastPage.Location = new System.Drawing.Point(242, 10);
+            this.btnLastPage.Name = "btnLastPage";
+            this.btnLastPage.Size = new System.Drawing.Size(30, 30);
+            this.btnLastPage.TabIndex = 7;
+            this.btnLastPage.Text = ">>";
+            this.btnLastPage.UseVisualStyleBackColor = true;
+            this.btnLastPage.Click += new System.EventHandler(this.btnLastPage_Click);
             // 
             // label4
             // 
@@ -255,41 +258,43 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "/";
             // 
-            // button3
+            // btnPreviousPage
             // 
-            this.button3.Location = new System.Drawing.Point(48, 10);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(30, 30);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "<";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnPreviousPage.Location = new System.Drawing.Point(48, 10);
+            this.btnPreviousPage.Name = "btnPreviousPage";
+            this.btnPreviousPage.Size = new System.Drawing.Size(30, 30);
+            this.btnPreviousPage.TabIndex = 0;
+            this.btnPreviousPage.Text = "<";
+            this.btnPreviousPage.UseVisualStyleBackColor = true;
+            this.btnPreviousPage.Click += new System.EventHandler(this.btnPreviousPage_Click);
             // 
-            // button5
+            // btnNextPage
             // 
-            this.button5.Location = new System.Drawing.Point(206, 10);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(30, 30);
-            this.button5.TabIndex = 6;
-            this.button5.Text = ">";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnNextPage.Location = new System.Drawing.Point(206, 10);
+            this.btnNextPage.Name = "btnNextPage";
+            this.btnNextPage.Size = new System.Drawing.Size(30, 30);
+            this.btnNextPage.TabIndex = 6;
+            this.btnNextPage.Text = ">";
+            this.btnNextPage.UseVisualStyleBackColor = true;
+            this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
             // 
-            // label3
+            // lblPageCount
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label3.Location = new System.Drawing.Point(154, 14);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 20);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Page";
+            this.lblPageCount.AutoSize = true;
+            this.lblPageCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblPageCount.Location = new System.Drawing.Point(154, 14);
+            this.lblPageCount.Name = "lblPageCount";
+            this.lblPageCount.Size = new System.Drawing.Size(46, 20);
+            this.lblPageCount.TabIndex = 4;
+            this.lblPageCount.Text = "Page";
             // 
             // MainGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "MainGrid";
             this.Size = new System.Drawing.Size(992, 230);
@@ -316,13 +321,13 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.TextBox txtCurrentPage;
+        private System.Windows.Forms.Button btnFirstPage;
+        private System.Windows.Forms.Button btnLastPage;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnPreviousPage;
+        private System.Windows.Forms.Button btnNextPage;
+        private System.Windows.Forms.Label lblPageCount;
     }
 }
